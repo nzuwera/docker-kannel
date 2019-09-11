@@ -46,7 +46,7 @@ RUN cd /usr/local && \
 	cp /usr/local/src/kannel/gateway/addons/opensmppbox/example/opensmppbox.conf.example /etc/kannel/opensmppbox.conf && \
 	cp /usr/local/src/kannel/gateway/addons/opensmppbox/example/smpplogins.txt.example /etc/kannel/smpplogins.txt && \
 	rm -rf /usr/local/src/kannel/gateway && \
-	apt-get -y clean
+	apt-get autoclean -y && apt-get autoremove -y
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY kannel.conf /etc/kannel/kannel.conf
